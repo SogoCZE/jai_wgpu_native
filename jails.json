@@ -1,0 +1,9 @@
+{
+    "local_modules": [
+        "modules"
+    ],
+    "roots": [
+        "wgpu/generate.jai"
+    ],
+    "build_root": "wgpu/generate.jai"
+}
