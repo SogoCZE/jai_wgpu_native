@@ -3,7 +3,8 @@
         "modules"
     ],
     "roots": [
-        "wgpu/generate.jai"
+        "wgpu/generate.jai",
+        "examples/hello_triangle"
     ],
     "build_root": "wgpu/generate.jai"
 }
