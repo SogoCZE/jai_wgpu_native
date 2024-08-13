@@ -67,6 +67,12 @@ main :: () {
     adapter := request_adapter(instance, surface, powerPreference = .HighPerformance);
     assert(adapter != null, "Adapter is not created correctly");
 
+    adapter_info: wgpu.AdapterInfo;
+    wgpu.AdapterGetInfo(adapter, *adapter_info);
+    assert(adapter != null, "Adapter info is not created correctly");
+
+    log("Backend: %", adapter_info.backendType);
+
     device := request_device(adapter);
     assert(device != null, "Device is not created correctly");
 

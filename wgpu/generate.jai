@@ -68,6 +68,11 @@ ANDROID_BUILD_TARGET :: "";
                 exit(1);
             }
 
+            if !copy_file(get_builded_lib_path(.WINDOWS, WINDOWS_BUILD_TARGET, release, "lib"), "./windows/libwgpu_native.lib") {
+                log_error("Failed to copy library.");
+                exit(1);
+            }
+
             generate();
         case .LINUX;
             build(.LINUX);
@@ -94,21 +99,25 @@ run_cmd :: (command: [] string, working_directory: string, print_live := false) 
     return output_string, true;
 }
 
-get_builded_lib_path :: (platform: Operating_System_Tag, target: string, release: bool) -> string {
+get_builded_lib_path :: (platform: Operating_System_Tag, target: string, release: bool, custom_extension := "") -> string {
     extension: string;
+    name: string;
     if platform == .MACOS || platform == .IOS {
-        extension = "libwgpu_native.dylib";
+        name = "libwgpu_native";
+        extension = "dylib";
     }
 
     if platform == .WINDOWS {
-        extension = "wgpu_native.dll";
+        name = "wgpu_native";
+        extension = "dll";
     }
 
     if platform == .LINUX || platform == .ANDROID {
-        extension = "libwgpu_native.so";
+        name = "libwgpu_native";
+        extension = "so";
     }
 
-    return sprint("./wgpu-native/target/%/%/%", target, ifx release then "release" else "debug", extension);
+    return sprint("./wgpu-native/target/%/%/%.%", target, ifx release then "release" else "debug", name, ifx custom_extension.count > 0 then custom_extension else extension);
 }
 
 build :: (platform: Operating_System_Tag, release := true) -> bool {
