@@ -1,7 +1,7 @@
 //
 // This file was auto-generated using the following command:
 //
-// jai generate.jai
+// jai ./generate.jai
 //
 
 
@@ -82,7 +82,7 @@ TextureView :: *TextureViewImpl;
 *
 * @{
 */
-AdapterType :: enum u32 {
+AdapterType :: enum s32 {
     DiscreteGPU   :: 0;
     IntegratedGPU :: 1;
     CPU           :: 2;
@@ -90,14 +90,14 @@ AdapterType :: enum u32 {
     Force32       :: 2147483647;
 }
 
-AddressMode :: enum u32 {
+AddressMode :: enum s32 {
     Repeat       :: 0;
     MirrorRepeat :: 1;
     ClampToEdge  :: 2;
     Force32      :: 2147483647;
 }
 
-BackendType :: enum u32 {
+BackendType :: enum s32 {
     Undefined :: 0;
     Null      :: 1;
     WebGPU    :: 2;
@@ -110,7 +110,7 @@ BackendType :: enum u32 {
     Force32   :: 2147483647;
 }
 
-BlendFactor :: enum u32 {
+BlendFactor :: enum s32 {
     Zero              :: 0;
     One               :: 1;
     Src               :: 2;
@@ -127,7 +127,7 @@ BlendFactor :: enum u32 {
     Force32           :: 2147483647;
 }
 
-BlendOperation :: enum u32 {
+BlendOperation :: enum s32 {
     Add             :: 0;
     Subtract        :: 1;
     ReverseSubtract :: 2;
@@ -136,7 +136,7 @@ BlendOperation :: enum u32 {
     Force32         :: 2147483647;
 }
 
-BufferBindingType :: enum u32 {
+BufferBindingType :: enum s32 {
     Undefined       :: 0;
     Uniform         :: 1;
     Storage         :: 2;
@@ -144,7 +144,7 @@ BufferBindingType :: enum u32 {
     Force32         :: 2147483647;
 }
 
-BufferMapAsyncStatus :: enum u32 {
+BufferMapAsyncStatus :: enum s32 {
     Success                 :: 0;
     ValidationError         :: 1;
     Unknown                 :: 2;
@@ -157,14 +157,14 @@ BufferMapAsyncStatus :: enum u32 {
     Force32                 :: 2147483647;
 }
 
-BufferMapState :: enum u32 {
+BufferMapState :: enum s32 {
     Unmapped :: 0;
     Pending  :: 1;
     Mapped   :: 2;
     Force32  :: 2147483647;
 }
 
-CompareFunction :: enum u32 {
+CompareFunction :: enum s32 {
     Undefined    :: 0;
     Never        :: 1;
     Less         :: 2;
@@ -177,7 +177,7 @@ CompareFunction :: enum u32 {
     Force32      :: 2147483647;
 }
 
-CompilationInfoRequestStatus :: enum u32 {
+CompilationInfoRequestStatus :: enum s32 {
     Success    :: 0;
     Error      :: 1;
     DeviceLost :: 2;
@@ -185,14 +185,14 @@ CompilationInfoRequestStatus :: enum u32 {
     Force32    :: 2147483647;
 }
 
-CompilationMessageType :: enum u32 {
+CompilationMessageType :: enum s32 {
     Error   :: 0;
     Warning :: 1;
     Info    :: 2;
     Force32 :: 2147483647;
 }
 
-CompositeAlphaMode :: enum u32 {
+CompositeAlphaMode :: enum s32 {
     Auto            :: 0;
     Opaque          :: 1;
     Premultiplied   :: 2;
@@ -201,7 +201,7 @@ CompositeAlphaMode :: enum u32 {
     Force32         :: 2147483647;
 }
 
-CreatePipelineAsyncStatus :: enum u32 {
+CreatePipelineAsyncStatus :: enum s32 {
     Success         :: 0;
     ValidationError :: 1;
     InternalError   :: 2;
@@ -211,27 +211,27 @@ CreatePipelineAsyncStatus :: enum u32 {
     Force32         :: 2147483647;
 }
 
-CullMode :: enum u32 {
+CullMode :: enum s32 {
     None    :: 0;
     Front   :: 1;
     Back    :: 2;
     Force32 :: 2147483647;
 }
 
-DeviceLostReason :: enum u32 {
+DeviceLostReason :: enum s32 {
     Unknown   :: 1;
     Destroyed :: 2;
     Force32   :: 2147483647;
 }
 
-ErrorFilter :: enum u32 {
+ErrorFilter :: enum s32 {
     Validation  :: 0;
     OutOfMemory :: 1;
     Internal    :: 2;
     Force32     :: 2147483647;
 }
 
-ErrorType :: enum u32 {
+ErrorType :: enum s32 {
     NoError     :: 0;
     Validation  :: 1;
     OutOfMemory :: 2;
@@ -241,7 +241,7 @@ ErrorType :: enum u32 {
     Force32     :: 2147483647;
 }
 
-FeatureName :: enum u32 {
+FeatureName :: enum s32 {
     Undefined               :: 0;
     DepthClipControl        :: 1;
     Depth32FloatStencil8    :: 2;
@@ -257,46 +257,46 @@ FeatureName :: enum u32 {
     Force32                 :: 2147483647;
 }
 
-FilterMode :: enum u32 {
+FilterMode :: enum s32 {
     Nearest :: 0;
     Linear  :: 1;
     Force32 :: 2147483647;
 }
 
-FrontFace :: enum u32 {
+FrontFace :: enum s32 {
     CCW     :: 0;
     CW      :: 1;
     Force32 :: 2147483647;
 }
 
-IndexFormat :: enum u32 {
+IndexFormat :: enum s32 {
     Undefined :: 0;
     Uint16    :: 1;
     Uint32    :: 2;
     Force32   :: 2147483647;
 }
 
-LoadOp :: enum u32 {
+LoadOp :: enum s32 {
     Undefined :: 0;
     Clear     :: 1;
     Load      :: 2;
     Force32   :: 2147483647;
 }
 
-MipmapFilterMode :: enum u32 {
+MipmapFilterMode :: enum s32 {
     Nearest :: 0;
     Linear  :: 1;
     Force32 :: 2147483647;
 }
 
-PowerPreference :: enum u32 {
+PowerPreference :: enum s32 {
     Undefined       :: 0;
     LowPower        :: 1;
     HighPerformance :: 2;
     Force32         :: 2147483647;
 }
 
-PresentMode :: enum u32 {
+PresentMode :: enum s32 {
     Fifo        :: 0;
     FifoRelaxed :: 1;
     Immediate   :: 2;
@@ -304,7 +304,7 @@ PresentMode :: enum u32 {
     Force32     :: 2147483647;
 }
 
-PrimitiveTopology :: enum u32 {
+PrimitiveTopology :: enum s32 {
     PointList     :: 0;
     LineList      :: 1;
     LineStrip     :: 2;
@@ -313,13 +313,13 @@ PrimitiveTopology :: enum u32 {
     Force32       :: 2147483647;
 }
 
-QueryType :: enum u32 {
+QueryType :: enum s32 {
     Occlusion :: 0;
     Timestamp :: 1;
     Force32   :: 2147483647;
 }
 
-QueueWorkDoneStatus :: enum u32 {
+QueueWorkDoneStatus :: enum s32 {
     Success    :: 0;
     Error      :: 1;
     Unknown    :: 2;
@@ -327,7 +327,7 @@ QueueWorkDoneStatus :: enum u32 {
     Force32    :: 2147483647;
 }
 
-RequestAdapterStatus :: enum u32 {
+RequestAdapterStatus :: enum s32 {
     Success     :: 0;
     Unavailable :: 1;
     Error       :: 2;
@@ -335,14 +335,14 @@ RequestAdapterStatus :: enum u32 {
     Force32     :: 2147483647;
 }
 
-RequestDeviceStatus :: enum u32 {
+RequestDeviceStatus :: enum s32 {
     Success :: 0;
     Error   :: 1;
     Unknown :: 2;
     Force32 :: 2147483647;
 }
 
-SType :: enum u32 {
+SType :: enum s32 {
     Invalid                                  :: 0;
     SurfaceDescriptorFromMetalLayer          :: 1;
     SurfaceDescriptorFromWindowsHWND         :: 2;
@@ -358,7 +358,7 @@ SType :: enum u32 {
     Force32                                  :: 2147483647;
 }
 
-SamplerBindingType :: enum u32 {
+SamplerBindingType :: enum s32 {
     Undefined    :: 0;
     Filtering    :: 1;
     NonFiltering :: 2;
@@ -366,7 +366,7 @@ SamplerBindingType :: enum u32 {
     Force32      :: 2147483647;
 }
 
-StencilOperation :: enum u32 {
+StencilOperation :: enum s32 {
     Keep           :: 0;
     Zero           :: 1;
     Replace        :: 2;
@@ -378,7 +378,7 @@ StencilOperation :: enum u32 {
     Force32        :: 2147483647;
 }
 
-StorageTextureAccess :: enum u32 {
+StorageTextureAccess :: enum s32 {
     Undefined :: 0;
     WriteOnly :: 1;
     ReadOnly  :: 2;
@@ -386,14 +386,14 @@ StorageTextureAccess :: enum u32 {
     Force32   :: 2147483647;
 }
 
-StoreOp :: enum u32 {
+StoreOp :: enum s32 {
     Undefined :: 0;
     Store     :: 1;
     Discard   :: 2;
     Force32   :: 2147483647;
 }
 
-SurfaceGetCurrentTextureStatus :: enum u32 {
+SurfaceGetCurrentTextureStatus :: enum s32 {
     Success     :: 0;
     Timeout     :: 1;
     Outdated    :: 2;
@@ -403,21 +403,21 @@ SurfaceGetCurrentTextureStatus :: enum u32 {
     Force32     :: 2147483647;
 }
 
-TextureAspect :: enum u32 {
+TextureAspect :: enum s32 {
     All         :: 0;
     StencilOnly :: 1;
     DepthOnly   :: 2;
     Force32     :: 2147483647;
 }
 
-TextureDimension :: enum u32 {
+TextureDimension :: enum s32 {
     _1D     :: 0;
     _2D     :: 1;
     _3D     :: 2;
     Force32 :: 2147483647;
 }
 
-TextureFormat :: enum u32 {
+TextureFormat :: enum s32 {
     Undefined            :: 0;
     R8Unorm              :: 1;
     R8Snorm              :: 2;
@@ -517,7 +517,7 @@ TextureFormat :: enum u32 {
     Force32              :: 2147483647;
 }
 
-TextureSampleType :: enum u32 {
+TextureSampleType :: enum s32 {
     Undefined         :: 0;
     Float             :: 1;
     UnfilterableFloat :: 2;
@@ -527,7 +527,7 @@ TextureSampleType :: enum u32 {
     Force32           :: 2147483647;
 }
 
-TextureViewDimension :: enum u32 {
+TextureViewDimension :: enum s32 {
     Undefined :: 0;
     _1D       :: 1;
     _2D       :: 2;
@@ -538,7 +538,7 @@ TextureViewDimension :: enum u32 {
     Force32   :: 2147483647;
 }
 
-VertexFormat :: enum u32 {
+VertexFormat :: enum s32 {
     Undefined :: 0;
     Uint8x2   :: 1;
     Uint8x4   :: 2;
@@ -573,14 +573,14 @@ VertexFormat :: enum u32 {
     Force32   :: 2147483647;
 }
 
-VertexStepMode :: enum u32 {
+VertexStepMode :: enum s32 {
     Vertex              :: 0;
     Instance            :: 1;
     VertexBufferNotUsed :: 2;
     Force32             :: 2147483647;
 }
 
-WGSLFeatureName :: enum u32 {
+WGSLFeatureName :: enum s32 {
     Undefined                           :: 0;
     ReadonlyAndReadwriteStorageTextures :: 1;
     Packed4x8IntegerDotProduct          :: 2;
@@ -595,7 +595,7 @@ WGSLFeatureName :: enum u32 {
 *
 * @{
 */
-BufferUsage :: enum u32 {
+BufferUsage :: enum s32 {
     None         :: 0;
     MapRead      :: 1;
     MapWrite     :: 2;
@@ -612,7 +612,7 @@ BufferUsage :: enum u32 {
 
 BufferUsageFlags :: Flags;
 
-ColorWriteMask :: enum u32 {
+ColorWriteMask :: enum s32 {
     None    :: 0;
     Red     :: 1;
     Green   :: 2;
@@ -624,7 +624,7 @@ ColorWriteMask :: enum u32 {
 
 ColorWriteMaskFlags :: Flags;
 
-MapMode :: enum u32 {
+MapMode :: enum s32 {
     None    :: 0;
     Read    :: 1;
     Write   :: 2;
@@ -633,7 +633,7 @@ MapMode :: enum u32 {
 
 MapModeFlags :: Flags;
 
-ShaderStage :: enum u32 {
+ShaderStage :: enum s32 {
     None     :: 0;
     Vertex   :: 1;
     Fragment :: 2;
@@ -643,7 +643,7 @@ ShaderStage :: enum u32 {
 
 ShaderStageFlags :: Flags;
 
-TextureUsage :: enum u32 {
+TextureUsage :: enum s32 {
     None             :: 0;
     CopySrc          :: 1;
     CopyDst          :: 2;
@@ -1861,7 +1861,7 @@ TextureViewSetLabel :: (textureView: TextureView, label: *u8) -> void #foreign l
 TextureViewReference :: (textureView: TextureView) -> void #foreign libwgpu_native "wgpuTextureViewReference";
 TextureViewRelease :: (textureView: TextureView) -> void #foreign libwgpu_native "wgpuTextureViewRelease";
 
-NativeSType :: enum u32 {
+NativeSType :: enum s32 {
     SType_DeviceExtras               :: 196609;
     SType_RequiredLimitsExtras       :: 196610;
     SType_PipelineLayoutExtras       :: 196611;
@@ -1875,7 +1875,7 @@ NativeSType :: enum u32 {
     Force32                          :: 2147483647;
 }
 
-NativeFeature :: enum u32 {
+NativeFeature :: enum s32 {
     PushConstants                                         :: 196609;
     TextureAdapterSpecificFormatFeatures                  :: 196610;
     MultiDrawIndirect                                     :: 196611;
@@ -1905,7 +1905,7 @@ NativeFeature :: enum u32 {
     Force32                                               :: 2147483647;
 }
 
-LogLevel :: enum u32 {
+LogLevel :: enum s32 {
     Off     :: 0;
     Error   :: 1;
     Warn    :: 2;
@@ -1915,7 +1915,7 @@ LogLevel :: enum u32 {
     Force32 :: 2147483647;
 }
 
-InstanceBackend :: enum u32 {
+InstanceBackend :: enum s32 {
     All           :: 0;
     Vulkan        :: 1;
     GL            :: 2;
@@ -1931,7 +1931,7 @@ InstanceBackend :: enum u32 {
 
 InstanceBackendFlags :: Flags;
 
-InstanceFlag :: enum u32 {
+InstanceFlag :: enum s32 {
     Default          :: 0;
     Debug            :: 1;
     Validation       :: 2;
@@ -1941,14 +1941,14 @@ InstanceFlag :: enum u32 {
 
 InstanceFlags :: Flags;
 
-Dx12Compiler :: enum u32 {
+Dx12Compiler :: enum s32 {
     Undefined :: 0;
     Fxc       :: 1;
     Dxc       :: 2;
     Force32   :: 2147483647;
 }
 
-Gles3MinorVersion :: enum u32 {
+Gles3MinorVersion :: enum s32 {
     Automatic :: 0;
     Version0  :: 1;
     Version1  :: 2;
@@ -1956,7 +1956,7 @@ Gles3MinorVersion :: enum u32 {
     Force32   :: 2147483647;
 }
 
-PipelineStatisticName :: enum u32 {
+PipelineStatisticName :: enum s32 {
     VertexShaderInvocations   :: 0;
     ClipperInvocations        :: 1;
     ClipperPrimitivesOut      :: 2;
@@ -1965,7 +1965,7 @@ PipelineStatisticName :: enum u32 {
     Force32                   :: 2147483647;
 }
 
-NativeQueryType :: enum u32 {
+NativeQueryType :: enum s32 {
     PipelineStatistics :: 196608;
     Force32            :: 2147483647;
 }
@@ -2101,7 +2101,7 @@ SurfaceConfigurationExtras :: struct {
 
 LogCallback :: #type (level: LogLevel, message: *u8, userdata: *void) -> void #c_call;
 
-NativeTextureFormat :: enum u32 {
+NativeTextureFormat :: enum s32 {
     R16Unorm    :: 196609;
     R16Snorm    :: 196610;
     Rg16Unorm   :: 196611;

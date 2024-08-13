@@ -97,18 +97,18 @@ run_cmd :: (command: [] string, working_directory: string, print_live := false) 
 get_builded_lib_path :: (platform: Operating_System_Tag, target: string, release: bool) -> string {
     extension: string;
     if platform == .MACOS || platform == .IOS {
-        extension = "dylib";
+        extension = "libwgpu_native.dylib";
     }
 
     if platform == .WINDOWS {
-        extension = "dll";
+        extension = "wgpu_native.dll";
     }
 
     if platform == .LINUX || platform == .ANDROID {
-        extension = "so";
+        extension = "libwgpu_native.so";
     }
 
-    return sprint("./wgpu-native/target/%/%/libwgpu_native.%", target, ifx release then "release" else "debug", extension);
+    return sprint("./wgpu-native/target/%/%/%", target, ifx release then "release" else "debug", extension);
 }
 
 build :: (platform: Operating_System_Tag, release := true) -> bool {
