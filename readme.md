@@ -7,7 +7,7 @@ To use simply create local `modules` folder in your `Jai` project and copy here 
 
 ## Build and generate yourself
 1. You need to have installed [Rust](https://www.rust-lang.org) (to be able compile wgpu-native).
-2. Run `jai generate.jai` in wgpu folder to build and generate bindings.
+2. Run `jai generate.jai` in wgpu folder to build and generate bindings. Use `- -debug` flag to build debug version of the libraries.
 
 ## TODO
 - iOS

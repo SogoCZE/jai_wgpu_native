@@ -17,6 +17,11 @@ ANDROID_BUILD_TARGET :: "";
 #run {
     if #exists(JAILS_DIAGNOSTICS_BUILD) return;
 
+    options := get_build_options();
+    args := options.compile_time_command_line;
+
+    release := !array_find(args, "-debug");
+
     set_build_options_dc(.{ do_output=false });
 
     // clone submodules
@@ -39,13 +44,11 @@ ANDROID_BUILD_TARGET :: "";
         exit(1);
     }
 
-    release := true;
-
     // Build libraries and generate bindings
     if OS == {
         case .MACOS;
-            build(.MACOS);
-            // build(.IOS);
+            build(.MACOS, release);
+            // build(.IOS, release);
 
             // lipo result in fat library and copy it
             make_directory_if_it_does_not_exist("./macos");
@@ -60,7 +63,7 @@ ANDROID_BUILD_TARGET :: "";
             generate();
 
         case .WINDOWS;
-            build(.WINDOWS);
+            build(.WINDOWS, release);
 
             make_directory_if_it_does_not_exist("./windows");
             if !copy_file(get_builded_lib_path(.WINDOWS, WINDOWS_BUILD_TARGET, release), "./windows/libwgpu_native.dll") {
@@ -75,7 +78,7 @@ ANDROID_BUILD_TARGET :: "";
 
             generate();
         case .LINUX;
-            build(.LINUX);
+            build(.LINUX, release);
 
             make_directory_if_it_does_not_exist("./linux");
             if !copy_file(get_builded_lib_path(.LINUX, LINUX_BUILD_TARGET, release), "./windows/libwgpu_native.so") {
@@ -120,7 +123,7 @@ get_builded_lib_path :: (platform: Operating_System_Tag, target: string, release
     return sprint("./wgpu-native/target/%/%/%.%", target, ifx release then "release" else "debug", name, ifx custom_extension.count > 0 then custom_extension else extension);
 }
 
-build :: (platform: Operating_System_Tag, release := true) -> bool {
+build :: (platform: Operating_System_Tag, release: bool) -> bool {
     log("Compiling wgpu-native for % (%)", platform, ifx release then "release" else "debug");
 
     targets: [..]string;
@@ -182,7 +185,15 @@ build :: (platform: Operating_System_Tag, release := true) -> bool {
 
     for target: targets {
         log("Compiling for target: %", target);
-        result, ok := run_cmd(.["cargo", "build", ifx release "--release" else "", "--target", target], "./wgpu-native", true);
+
+        cmd_str: [..]string;
+        array_add(*cmd_str, "cargo", "build");
+        if release {
+            array_add(*cmd_str, "--release");
+        }
+        array_add(*cmd_str, "--target", target);
+
+        result, ok := run_cmd(cmd_str, "./wgpu-native", true);
         if !ok {
             log_error("Failed to build wgpu-native for % and target % (%)", platform, target, ifx release then "release" else "debug");
             log_error(result);
