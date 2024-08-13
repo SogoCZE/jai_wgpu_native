@@ -3,7 +3,7 @@
 Bindings for [wgpu-native](https://github.com/gfx-rs/wgpu-native) for Jai. You can use prebuild and pregenerated bindings or compile and generate bindings yourself.
 
 ## Use prebuilt and pregenerated bindings
-To use simply create local `modules` folder in your `Jai` project and copy here the `wgpu` folder. Then import wgpu and use it. You can look at the [hello_triangle](/main/examples/hello_triangle) example.
+To use simply create local `modules` folder in your `Jai` project and copy here the `wgpu` folder. Then import wgpu and use it. You can look at the [hello_triangle](https://github.com/SogoCZE/jai_wgpu_native/tree/main/examples/hello_triangle) example.
 
 ## Build and generate yourself
 1. You need to have installed [Rust](https://www.rust-lang.org) (to be able compile wgpu-native).
