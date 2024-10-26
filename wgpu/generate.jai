@@ -81,7 +81,7 @@ ANDROID_BUILD_TARGET :: "";
             build(.LINUX, release);
 
             make_directory_if_it_does_not_exist("./linux");
-            if !copy_file(get_builded_lib_path(.LINUX, LINUX_BUILD_TARGET, release), "./windows/libwgpu_native.so") {
+            if !copy_file(get_builded_lib_path(.LINUX, LINUX_BUILD_TARGET, release), "./linux/libwgpu_native.so") {
                 log_error("Failed to copy library.");
                 exit(1);
             }
